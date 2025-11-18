@@ -5,8 +5,15 @@ const indexRouter = require('./routes/index');
 const app = express();
 const PORT = 3000;
 
+app.use(express.json());
+
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.post('/webhook', (req, res) => {
+  console.log("Webhook mesajı geldi:", req.body);
+  res.sendStatus(200);
+});
 
 // Use the router for handling routes
 app.use('/', indexRouter);
