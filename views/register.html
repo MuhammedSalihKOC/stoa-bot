@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kayıt Ol — StoaBot</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body class="page">
+    <main class="card">
+      <h2>Hesap Oluştur</h2>
+      <form method="post" action="/register" class="form">
+        <label>Kullanıcı adı
+          <input name="username" type="text" required />
+        </label>
+        <label>Şifre
+          <input name="password" type="password" required />
+        </label>
+        <div class="form-actions">
+          <button class="btn" type="submit">Kayıt Ol</button>
+          <a class="btn btn-ghost" href="/login">Zaten hesabım var</a>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

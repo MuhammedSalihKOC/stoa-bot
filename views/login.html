@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Giriş — StoaBot</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body class="page">
+    <main class="card">
+      <h2>Giriş Yap</h2>
+      <form method="post" action="/login" class="form">
+        <label>Kullanıcı adı
+          <input name="username" type="text" required />
+        </label>
+        <label>Şifre
+          <input name="password" type="password" required />
+        </label>
+        <div class="form-actions">
+          <button class="btn" type="submit">Giriş</button>
+          <a class="btn" href="/register">Kayıt Ol</a>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

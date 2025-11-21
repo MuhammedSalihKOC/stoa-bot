@@ -5,7 +5,9 @@ const indexRouter = require('./routes/index');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Parse JSON and URL-encoded form bodies
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
