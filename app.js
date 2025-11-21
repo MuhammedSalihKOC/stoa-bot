@@ -12,6 +12,21 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Webhook verification (GET)
+app.get('/webhook', (req, res) => {
+  const VERIFY_TOKEN = "salih-token"; // istediğin bir token
+  const mode = req.query['hub.mode'];
+  const token = req.query['hub.verify_token'];
+  const challenge = req.query['hub.challenge'];
+
+  if (mode && token && mode === 'subscribe' && token === VERIFY_TOKEN) {
+    console.log("Webhook doğrulandı!");
+    res.status(200).send(challenge);
+  } else {
+    res.sendStatus(403);
+  }
+});
+
 app.post('/webhook', (req, res) => {
   console.log("Webhook mesajı geldi:", req.body);
   res.sendStatus(200);
